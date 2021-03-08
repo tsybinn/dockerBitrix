@@ -1,0 +1,20 @@
+version: '2'
+services:
+  apache:
+    build: ./apache
+    ports:
+      - '80:80'
+    volumes:
+      - './www:/var/www/html'
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - './mysql:/var/lib/mysql'
+    environment:
+      - MYSQL_USER=bitrix
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=bitrix
+      - MYSQL_ROOT_PASSWORD=password2
+    ports:
+      - '8080:8080'
