@@ -1,8 +1,8 @@
 
-<h3> Окружение для запуска битрикс через docker. </h3>
+<h3> РћРєСЂСѓР¶РµРЅРёРµ РґР»СЏ Р·Р°РїСѓСЃРєР° Р±РёС‚СЂРёРєСЃ С‡РµСЂРµР· docker. </h3>
 docker-compose build  && docker-compose up -d
 
-![alt text](./settings.png "Описание будет тут")
+![alt text](./settings.png "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ")
 <hr>
 
 **APACHE**
@@ -10,7 +10,7 @@ docker-compose build  && docker-compose up -d
 IP APACHE
  `docker inspect apache | grep "IPAddress"`
 
-Вход в контейнер
+Р’С…РѕРґ РІ РєРѕРЅС‚РµР№РЅРµСЂ
 `docker exec -it apache bash`
 
 <a  href="http://127.0.0.1/bitrix_server_test.php">test bitrix server</a> <br>
@@ -21,7 +21,7 @@ IP APACHE
 **MYSQL**
 
 - ip mysql  `docker inspect mysql | grep "IPAddress"`
-- Вход в контейнер `docker inspect mysql | grep "IPAddress"`
+- Р’С…РѕРґ РІ РєРѕРЅС‚РµР№РЅРµСЂ `docker inspect mysql | grep "IPAddress"`
 
 - MYSQL_USER=bitrix
 - MYSQL_PASSWORD=password
@@ -33,6 +33,6 @@ IP APACHE
 
 **mail**
 
-Исходящии письма будут сохранятся в директории  <a  href="./mail">mail</a> <br>
+РСЃС…РѕРґСЏС‰РёРµ РїРёСЃСЊРјР° Р±СѓРґСѓС‚ РїРѕРїР°РґР°С‚СЊ РІ РїР°РїРєСѓ <a  href="./mail">mail</a> <br>
 
 
