@@ -20,8 +20,8 @@ IP APACHE
 
 **MYSQL**
 
-- ip mysql  `docker inspect mysql | grep "IPAddress"`
-- Вход в контейнер `docker inspect mysql | grep "IPAddress"`
+- ip mysql  `docker inspect mysql | grep "IPAddress"` 
+- Вход в контейнер `docker exec -it mysql bash"` 
 
 - MYSQL_USER=bitrix
 - MYSQL_PASSWORD=password

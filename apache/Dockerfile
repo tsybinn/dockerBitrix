@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
        sendmail\
         gettext \
         wget \
+        mc  \
         screen && \
         rm -r /var/lib/apt/lists/*
 
@@ -18,6 +19,7 @@ RUN docker-php-ext-install sockets
 
 RUN docker-php-ext-install mysqli && \
  docker-php-ext-install pdo_mysql
+RUN a2enmod rewrite
 
 #RUN cd /var/www/html && wget https://www.1c-bitrix.ru/download/scripts/bitrixsetup.php
  # Install APCu and APC backward compatibility

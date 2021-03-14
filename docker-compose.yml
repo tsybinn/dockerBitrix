@@ -8,6 +8,9 @@ services:
     volumes:
       - './www:/var/www/html'
       - './mail:/var/mail'
+      - './apache/000-default.conf:/etc/apache2/sites-available/000-default.conf'
+    environment:
+      - TZ=Europe/Moscow
 
   mysql:
     image: mysql:5.7
@@ -19,5 +22,6 @@ services:
       - MYSQL_PASSWORD=password
       - MYSQL_DATABASE=bitrix
       - MYSQL_ROOT_PASSWORD=root
+      - TZ=Europe/Moscow
     ports:
       - '8080:8080'
