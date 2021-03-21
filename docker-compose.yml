@@ -6,7 +6,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - './www:/var/www/html'
+      - '../www:/var/www/html'
       - './mail:/var/mail'
       - './apache/000-default.conf:/etc/apache2/sites-available/000-default.conf'
     environment:
