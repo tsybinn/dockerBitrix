@@ -17,6 +17,7 @@ services:
     container_name: mysql
     volumes:
       - './mysql:/var/lib/mysql'
+      - './my.cnf:/etc/mysql/conf.d/mysql.cnf'
     environment:
       - MYSQL_USER=bitrix
       - MYSQL_PASSWORD=password
