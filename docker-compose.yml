@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   apache:
     container_name: apache
@@ -11,6 +11,12 @@ services:
       - './apache/000-default.conf:/etc/apache2/sites-available/000-default.conf'
     environment:
       - TZ=Europe/Moscow
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      default:
+        ipv4_address: 172.18.1.10
+    restart: always
 
   mysql:
     image: mysql:5.7
@@ -25,4 +31,14 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - TZ=Europe/Moscow
     ports:
-      - '8080:8080'
+      - '3310:3310'
+    networks:
+      default:
+        ipv4_address: 172.18.1.15
+    restart: always
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.1.0/24
